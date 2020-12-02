@@ -1,3 +1,7 @@
+import time
+
+tic = time.perf_counter()
+
 numbers = set()
 
 with open("data.txt") as f: raw_numbers = [numbers.add(int(i.strip())) for i in f.readlines()]
@@ -16,3 +20,6 @@ for number in numbers:
 		answer = number * other_two_numbers[0] * other_two_numbers[1]
 		print('the answer is : ')
 		print(answer)
+
+toc = time.perf_counter()
+print(f"script took {toc - tic:0.4f} seconds")
