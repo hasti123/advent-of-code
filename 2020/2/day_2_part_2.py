@@ -8,17 +8,6 @@ class Password:
 		self.target = split_data[1].replace(':','')
 		self.data = split_data[2]
 
-def isValidPassword(password):
-	targetCount = 0
-	
-	for char in password.data:
-		if char == password.target:
-			targetCount += 1
-			if targetCount > password.high:
-				return False
-			
-	return targetCount >= password.low and targetCount <= password.high
-
 with open("data.txt") as f: passwords = [Password(i) for i in f.readlines()]
 
 count = 0
