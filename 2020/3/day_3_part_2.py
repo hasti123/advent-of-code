@@ -7,7 +7,6 @@ def getTreeCount(hill, right, down):
 	tree_count = 0
 	
 	while current_row < len(hill):
-		print(hill[current_row][current_column])
 		if hill[current_row][current_column] == '#':
 			tree_count += 1
 		current_row += down
